@@ -20,6 +20,7 @@ import {
   Target,
   TrendingUp,
 } from "lucide-react"
+import Link from "next/link"
 
 export default function LandingPage() {
   const [activeFeature, setActiveFeature] = useState(0)
@@ -89,7 +90,9 @@ export default function LandingPage() {
               <a href="#community" className="text-[#403F4C] hover:text-[#E84855] transition-colors">
                 Community
               </a>
-              <Button className="bg-[#E84855] hover:bg-[#E84855]/90 text-white">Get Started</Button>
+              <Link href="/Home">
+                <Button className="bg-[#E84855] hover:bg-[#E84855]/90 text-white">Get Started</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -119,18 +122,22 @@ export default function LandingPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-[#E84855] hover:bg-[#E84855]/90 text-white text-lg px-8 py-6">
-                  <Volume2 className="w-5 h-5 mr-2" />
-                  Start Learning Now
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-[#3185FC] text-[#3185FC] hover:bg-[#3185FC] hover:text-white text-lg px-8 py-6"
-                >
-                  <UserPlus className="w-5 h-5 mr-2" />
-                  Create Sessions
-                </Button>
+                <Link href="/Home">
+                  <Button size="lg" className="bg-[#E84855] hover:bg-[#E84855]/90 text-white text-lg px-8 py-6">
+                    <Volume2 className="w-5 h-5 mr-2" />
+                    Start Learning Now
+                  </Button>
+                </Link>
+                <Link href="/companions">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-[#3185FC] text-[#3185FC] hover:bg-[#3185FC] hover:text-white text-lg px-8 py-6"
+                  >
+                    <UserPlus className="w-5 h-5 mr-2" />
+                    Create Sessions
+                  </Button>
+                </Link>
               </div>
 
               <div className="flex items-center space-x-8 pt-4">
@@ -354,10 +361,12 @@ export default function LandingPage() {
             Join thousands of learners who are already experiencing the future of education
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#E84855] hover:bg-[#E84855]/90 text-white text-lg px-8 py-6">
-              <Play className="w-5 h-5 mr-2" />
-              Begin Your Journey
-            </Button>
+            <Link href="/Home">
+              <Button size="lg" className="bg-[#E84855] hover:bg-[#E84855]/90 text-white text-lg px-8 py-6">
+                <Play className="w-5 h-5 mr-2" />
+                Begin Your Journey
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
