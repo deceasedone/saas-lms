@@ -1,3 +1,4 @@
+// app/global-error.tsx
 "use client";
 
 import NextError from "next/error";
