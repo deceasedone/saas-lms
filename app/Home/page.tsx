@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import CompanionCard from "@/components/CompanionCard"
 import CompanionsList from "@/components/CompanionsList"
 import CTA from "@/components/CTA"
@@ -7,7 +9,8 @@ import { TrendingUp, Clock } from "lucide-react"
 
 const Page = async () => {
   const companions = await getAllCompanions({ limit: 3 })
-  const recentSessionsCompanions = await getRecentSessions(10)
+  const recentSessionsRaw = await getRecentSessions(10)
+  const recentSessionsCompanions = recentSessionsRaw.flat() as Companion[]
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-[#EFBCD5]/5 to-[#F9DC5C]/5 p-6">
