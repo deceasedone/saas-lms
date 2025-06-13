@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Mic, MicOff, Phone, PhoneOff, Volume2 } from "lucide-react"
+import PostSessionActions from "@/components/PostSessionActions"
 
 enum CallStatus {
   INACTIVE = "INACTIVE",
@@ -344,6 +345,11 @@ const CompanionComponent = ({
           </div>
         </CardContent>
       </Card>
+
+      {/* Post-Session Actions - Only show when session is finished */}
+      {callStatus === CallStatus.FINISHED && messages.length > 0 && (
+        <PostSessionActions messages={messages} subject={subject} topic={topic} />
+      )}
     </div>
   )
 }

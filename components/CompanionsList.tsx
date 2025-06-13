@@ -38,7 +38,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
             <TableBody>
               {companions?.map(({ id, subject, name, topic, duration }, index) => (
                 <TableRow
-                  key={id}
+                  key={`${id}-${index}`}
                   className="border-b border-[#EFBCD5]/20 hover:bg-[#EFBCD5]/5 transition-colors duration-200 group"
                 >
                   <TableCell className="py-4 px-6">
