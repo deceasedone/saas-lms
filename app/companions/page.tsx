@@ -46,11 +46,11 @@ const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
         </div>
 
         {/* Companions Grid */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
           {companions.map((companion, index) => (
             <div
               key={companion.id}
-              className="animate-in fade-in slide-in-from-bottom-4 duration-500"
+              className="animate-in fade-in slide-in-from-bottom-4 duration-500 flex justify-center"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CompanionCard {...companion} color={getSubjectColor(companion.subject)} />

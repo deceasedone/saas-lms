@@ -27,11 +27,11 @@ const Page = async () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {companions.map((companion, index) => (
               <div
                 key={companion.id}
-                className="animate-in fade-in slide-in-from-bottom-4 duration-500"
+                className="animate-in fade-in slide-in-from-bottom-4 duration-500 flex justify-center"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CompanionCard {...companion} color={getSubjectColor(companion.subject)} />

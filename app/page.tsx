@@ -1,4 +1,3 @@
-// app/page.tsx
 "use client"
 
 import { useState, useEffect } from "react"
@@ -92,7 +91,9 @@ export default function LandingPage() {
                 Community
               </a>
               <Link href="/Home">
-                <Button className="bg-[#E84855] hover:bg-[#E84855]/90 text-white">Get Started</Button>
+                <Button className="bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/80 hover:to-[#F9DC5C]/80 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  Get Started
+                </Button>
               </Link>
             </div>
           </div>
@@ -124,7 +125,10 @@ export default function LandingPage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/Home">
-                  <Button size="lg" className="bg-[#E84855] hover:bg-[#E84855]/90 text-white text-lg px-8 py-6">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/80 hover:to-[#F9DC5C]/80 text-white text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
+                  >
                     <Volume2 className="w-5 h-5 mr-2" />
                     Start Learning Now
                   </Button>
@@ -133,7 +137,7 @@ export default function LandingPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-[#3185FC] text-[#3185FC] hover:bg-[#3185FC] hover:text-white text-lg px-8 py-6"
+                    className="border-2 border-[#3185FC] text-[#3185FC] hover:bg-gradient-to-r hover:from-[#3185FC] hover:to-[#EFBCD5] hover:text-white hover:border-transparent text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
                   >
                     <UserPlus className="w-5 h-5 mr-2" />
                     Create Sessions
@@ -205,17 +209,19 @@ export default function LandingPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className={`group cursor-pointer transition-all duration-500 hover:scale-105 border-0 ${
+                className={`group cursor-pointer transition-all duration-500 hover:scale-110 border-0 hover:shadow-2xl transform hover:-translate-y-2 ${
                   activeFeature === index
-                    ? `bg-gradient-to-br ${feature.color} text-white shadow-2xl`
-                    : "bg-white hover:shadow-xl border border-[#EFBCD5]/30"
+                    ? `bg-gradient-to-br ${feature.color} text-white shadow-2xl scale-105`
+                    : "bg-white hover:bg-gradient-to-br hover:from-[#EFBCD5]/20 hover:to-[#F9DC5C]/20 border border-[#EFBCD5]/30 hover:border-[#3185FC]/50"
                 }`}
                 onClick={() => setActiveFeature(index)}
               >
                 <CardContent className="p-6 text-center space-y-4">
                   <div
-                    className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center ${
-                      activeFeature === index ? "bg-white/20" : `bg-gradient-to-r ${feature.color}`
+                    className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${
+                      activeFeature === index
+                        ? "bg-white/20"
+                        : `bg-gradient-to-r ${feature.color} group-hover:shadow-lg`
                     }`}
                   >
                     <div className={activeFeature === index ? "text-white" : "text-white"}>{feature.icon}</div>
@@ -265,24 +271,30 @@ export default function LandingPage() {
                 gradient: "from-[#F9DC5C] to-[#3185FC]",
               },
             ].map((item, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative group">
                 <div className="text-center space-y-6">
                   <div className="relative">
                     <div
-                      className={`w-20 h-20 bg-gradient-to-r ${item.gradient} rounded-full flex items-center justify-center mx-auto shadow-lg`}
+                      className={`w-20 h-20 bg-gradient-to-r ${item.gradient} rounded-full flex items-center justify-center mx-auto shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl transform group-hover:-translate-y-1`}
                     >
-                      <div className="text-white">{item.icon}</div>
+                      <div className="text-white transition-transform duration-300 group-hover:scale-110">
+                        {item.icon}
+                      </div>
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#403F4C] rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#403F4C] rounded-full flex items-center justify-center text-white text-sm font-bold transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#E84855] group-hover:to-[#F9DC5C] group-hover:scale-110">
                       {item.step}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-semibold text-[#403F4C]">{item.title}</h3>
-                  <p className="text-[#403F4C]/70">{item.description}</p>
+                  <h3 className="text-2xl font-semibold text-[#403F4C] transition-colors duration-300 group-hover:text-[#E84855]">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#403F4C]/70 transition-colors duration-300 group-hover:text-[#403F4C]/90">
+                    {item.description}
+                  </p>
                 </div>
                 {index < 2 && (
                   <div className="hidden md:block absolute top-10 left-full w-full">
-                    <ArrowRight className="w-6 h-6 text-[#3185FC] mx-auto" />
+                    <ArrowRight className="w-6 h-6 text-[#3185FC] mx-auto transition-all duration-300 group-hover:text-[#E84855] group-hover:scale-110 group-hover:translate-x-2" />
                   </div>
                 )}
               </div>
@@ -328,23 +340,35 @@ export default function LandingPage() {
                 gradient: "from-[#F9DC5C] to-[#E84855]",
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20">
+              <Card
+                key={index}
+                className="bg-white/10 backdrop-blur-sm border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-105 hover:shadow-2xl transform hover:-translate-y-2 group"
+              >
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#F9DC5C] text-[#F9DC5C]" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-[#F9DC5C] text-[#F9DC5C] transition-all duration-300 group-hover:scale-110"
+                      />
                     ))}
                   </div>
-                  <p className="text-white/90 italic">"{testimonial.content}"</p>
+                  <p className="text-white/90 italic transition-colors duration-300 group-hover:text-white">
+                    "{testimonial.content}"
+                  </p>
                   <div className="flex items-center space-x-3">
                     <div
-                      className={`w-10 h-10 bg-gradient-to-r ${testimonial.gradient} rounded-full flex items-center justify-center text-white font-semibold`}
+                      className={`w-10 h-10 bg-gradient-to-r ${testimonial.gradient} rounded-full flex items-center justify-center text-white font-semibold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg`}
                     >
                       {testimonial.avatar}
                     </div>
                     <div>
-                      <div className="text-white font-semibold">{testimonial.name}</div>
-                      <div className="text-white/70 text-sm">{testimonial.role}</div>
+                      <div className="text-white font-semibold transition-colors duration-300 group-hover:text-[#F9DC5C]">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-white/70 text-sm transition-colors duration-300 group-hover:text-white/90">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -363,17 +387,20 @@ export default function LandingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/Home">
-              <Button size="lg" className="bg-[#E84855] hover:bg-[#E84855]/90 text-white text-lg px-8 py-6">
-                <Play className="w-5 h-5 mr-2" />
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/80 hover:to-[#F9DC5C]/80 text-white text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform hover:-translate-y-1"
+              >
+                <Play className="w-5 h-5 mr-2 transition-transform duration-300 hover:scale-110" />
                 Begin Your Journey
               </Button>
             </Link>
             <Button
               size="lg"
               variant="outline"
-              className="border-[#403F4C] text-[#403F4C] hover:bg-[#403F4C] hover:text-white text-lg px-8 py-6"
+              className="border-2 border-[#403F4C] text-[#403F4C] hover:bg-gradient-to-r hover:from-[#403F4C] hover:to-[#3185FC] hover:text-white hover:border-transparent text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform hover:-translate-y-1"
             >
-              <Award className="w-5 h-5 mr-2" />
+              <Award className="w-5 h-5 mr-2 transition-transform duration-300 hover:scale-110" />
               Explore Features
             </Button>
           </div>
@@ -400,22 +427,34 @@ export default function LandingPage() {
               <h3 className="font-semibold mb-4 text-[#F9DC5C]">Platform</h3>
               <ul className="space-y-2 text-white/70">
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Voice Sessions
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Create Content
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Smart Quizzes
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Progress Tracking
                   </a>
                 </li>
@@ -426,22 +465,34 @@ export default function LandingPage() {
               <h3 className="font-semibold mb-4 text-[#F9DC5C]">Community</h3>
               <ul className="space-y-2 text-white/70">
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Learner Hub
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Creator Network
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Success Stories
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Support
                   </a>
                 </li>
@@ -452,22 +503,34 @@ export default function LandingPage() {
               <h3 className="font-semibold mb-4 text-[#F9DC5C]">Company</h3>
               <ul className="space-y-2 text-white/70">
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Careers
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Privacy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#EFBCD5] transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#EFBCD5] transition-all duration-300 hover:translate-x-1 inline-block"
+                  >
                     Terms
                   </a>
                 </li>

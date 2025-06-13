@@ -47,16 +47,15 @@ const CompanionCard = ({ id, name, topic, subject, duration, color, bookmarked }
   }
 
   return (
-    <Card className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm overflow-hidden">
+    <Card className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm overflow-hidden h-[420px] w-full flex flex-col justify-between min-w-[260px] max-w-[340px]">
       <div className="absolute inset-0 bg-gradient-to-br from-[#EFBCD5]/10 to-[#F9DC5C]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-      <CardContent className="relative p-6 space-y-4">
+      <CardContent className="relative p-6 flex flex-col h-full justify-between">
         {/* Header with Subject Badge and Bookmark */}
         <div className="flex justify-between items-start">
           <Badge className="text-white border-0 font-medium" style={{ backgroundColor: color }}>
             {subject}
           </Badge>
-
           <Button
             variant="ghost"
             size="sm"
@@ -89,7 +88,7 @@ const CompanionCard = ({ id, name, topic, subject, duration, color, bookmarked }
         </div>
 
         {/* Content */}
-        <div className="space-y-3 text-center">
+        <div className="space-y-3 text-center flex-1 flex flex-col justify-center">
           <h3 className="text-xl font-bold text-[#403F4C] line-clamp-2 group-hover:text-[#E84855] transition-colors duration-200">
             {name}
           </h3>
@@ -97,7 +96,7 @@ const CompanionCard = ({ id, name, topic, subject, duration, color, bookmarked }
         </div>
 
         {/* Duration */}
-        <div className="flex items-center justify-center gap-2 text-[#403F4C]/60">
+        <div className="flex items-center justify-center gap-2 text-[#403F4C]/60 mt-2">
           <Clock className="w-4 h-4" />
           <span className="text-sm font-medium">{duration} minutes</span>
         </div>
@@ -105,7 +104,7 @@ const CompanionCard = ({ id, name, topic, subject, duration, color, bookmarked }
         {/* Launch Button */}
         <Button
           asChild
-          className="w-full bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/90 hover:to-[#F9DC5C]/90 text-white font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-200 group/button"
+          className="w-full bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/90 hover:to-[#F9DC5C]/90 text-white font-semibold py-3 shadow-lg hover:shadow-xl transition-all duration-200 group/button mt-4"
         >
           <Link href={`/companions/${id}`}>
             <Play className="w-4 h-4 mr-2 group-hover/button:scale-110 transition-transform duration-200" />
