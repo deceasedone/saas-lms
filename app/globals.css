@@ -4,6 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Hide Clerk dev mode badge */
+.cl-internal-badge, .clerk-badge, .clerk-dev-badge {
+  display: none !important;
+}
+
 :root {
   --primary: oklch(0.205 0 0);
 

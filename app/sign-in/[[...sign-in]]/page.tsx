@@ -4,8 +4,8 @@ import { Brain, Sparkles } from "lucide-react"
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-[#EFBCD5]/10 to-[#F9DC5C]/10 flex items-center justify-center p-6">
-      <div className="w-full max-w-md space-y-8">
+    <main className="min-h-screen bg-gradient-to-br from-white via-[#EFBCD5]/10 to-[#F9DC5C]/10 flex items-center justify-center p-4 sm:p-6">
+      <div className="w-full max-w-xs sm:max-w-md mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-3">

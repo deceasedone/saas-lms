@@ -96,6 +96,14 @@ export default function LandingPage() {
                 </Button>
               </Link>
             </div>
+            {/* Mobile Get Started button */}
+            <div className="md:hidden flex items-center">
+              <Link href="/Home">
+                <Button className="bg-gradient-to-r from-[#E84855] to-[#F9DC5C] text-white px-4 py-2 text-sm font-semibold">
+                  Get Started
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
@@ -103,7 +111,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4 sm:px-0">
             <div className={`space-y-8 ${isVisible ? "animate-in slide-in-from-left duration-1000" : "opacity-0"}`}>
               <div className="space-y-4">
                 <Badge className="bg-[#F9DC5C] text-[#403F4C] hover:bg-[#F9DC5C]/90 border-0">
@@ -123,11 +131,11 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:gap-4">
                 <Link href="/Home">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/80 hover:to-[#F9DC5C]/80 text-white text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
+                    className="bg-gradient-to-r from-[#E84855] to-[#F9DC5C] hover:from-[#E84855]/80 hover:to-[#F9DC5C]/80 text-white text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform w-full sm:w-auto"
                   >
                     <Volume2 className="w-5 h-5 mr-2" />
                     Start Learning Now
@@ -137,7 +145,7 @@ export default function LandingPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-2 border-[#3185FC] text-[#3185FC] hover:bg-gradient-to-r hover:from-[#3185FC] hover:to-[#EFBCD5] hover:text-white hover:border-transparent text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
+                    className="border-2 border-[#3185FC] text-[#3185FC] hover:bg-gradient-to-r hover:from-[#3185FC] hover:to-[#EFBCD5] hover:text-white hover:border-transparent text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-xl transform w-full sm:w-auto"
                   >
                     <UserPlus className="w-5 h-5 mr-2" />
                     Create Sessions
